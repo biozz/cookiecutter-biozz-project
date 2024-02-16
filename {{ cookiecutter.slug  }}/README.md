@@ -1,3 +1,3 @@
 # {{ cookiecutter.slug }}
 
-My all-in-one todo list.
+{{ cookiecutter.description }}
