@@ -1,0 +1,33 @@
+{
+  "name": "{{ cookiecutter.slug }}",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "dev-mock": "VITE_MOCK=1 vite",
+    "build": "VITE_BACKEND= vite build --outDir=../static/app --emptyOutDir",
+    "build-mock": "VITE_MOCK=1 VITE_BACKEND= vite build --outDir=./dist_mock --base=/apps/{{ cookiecutter.slug }}/",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1",
+    "vite-plugin-solid": "^2.8.0"
+  },
+  "dependencies": {
+    "@solid-primitives/graphql": "^2.0.1",
+    "@solidjs/router": "^0.8.4",
+    "centrifuge": "^5.0.1",
+    "chart.js": "^4.4.1",
+    "date-fns": "^2.30.0",
+    "nanoid": "^5.0.4",
+    "solid-js": "^1.8.7"
+  }
+}

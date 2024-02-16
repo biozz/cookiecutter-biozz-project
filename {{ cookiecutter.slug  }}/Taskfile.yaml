@@ -1,0 +1,40 @@
+version: "3"
+
+tasks:
+  deps:
+    cmds:
+      - go mod tidy
+      - go mod vendor
+  build:
+    cmds:
+      - go build -o bin/{{ cookiecutter.slug }} main.go
+  run:
+    deps: [build]
+    cmds:
+      - ./bin/{{ cookiecutter.slug }}
+  server:
+    deps: [build]
+    cmds:
+      # - air server
+      - ./bin/{{ cookiecutter.slug }} server
+  frontend:
+    dir: web/app
+    cmds:
+      - pnpm dev
+  frontend-mock:
+    dir: web/app
+    cmds:
+      - pnpm dev-mock
+  deps-frontend:
+    dir: web/app
+    cmds:
+      - pnpm install
+  build-frontend:
+    dir: web/app
+    cmds:
+      - pnpm build
+  dev:
+    deps: [server, frontend]
+  deploy:
+    cmds:
+      - ansible-playbook -i scripts/ansible/inventory scripts/ansible/playbook.yml

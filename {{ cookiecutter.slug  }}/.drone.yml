@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+clone:
+  depth: 1
+
+steps:
+- name: deploy
+  image: plugins/ansible:3
+  settings:
+    playbook: scripts/ansible/playbook.yml
+    inventory: scripts/ansible/inventory
+    private_key:
+      from_secret: SSH_PRIVATE_KEY

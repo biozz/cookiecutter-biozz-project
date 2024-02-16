@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .circle {
+      @apply appearance-none align-middle border border-solid border-slate-400 shadow rounded-full w-5 h-5 md:w-6 md:h-6 p-1.5 my-2 md:m-1;
+  }
+}

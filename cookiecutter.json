@@ -1,0 +1,6 @@
+{
+  "name": "my-new-project",
+  "slug": "{{ cookiecutter.name.lower().replace(' ', '_').replace('-', '_') }}",
+  "module_prefix": "github.com/username/",
+  "description": "My new awesome project"
+}
